@@ -151,10 +151,10 @@ class Deputados(Camara):
         if Camara.deputados == {}:
             Camara.lista_deputados()
         
-        gasto_total = 0
+        gasto_total = {}
         for dep in self.partidos[id_partido]:
             dep_id = self.deputados[dep]
-            gasto_total += sum(self.gastos_deputado(dep_id, ano=ano).values())
+            gasto_total[dep] = sum(self.gastos_deputado(dep_id, ano=ano).values())
         
         return gasto_total
         
@@ -177,7 +177,7 @@ class Deputados(Camara):
         gastos_deputados = {}
         for pt in self.partidos.keys():
             print(pt)
-            gastos[pt] = self.gastos_partido(pt, ano=ano)
+            gastos[pt] = sum(self.gastos_partido(pt, ano=ano).values())
             gastos_deputados[pt] = gastos[pt] / len(self.partidos[pt])
             
         self.plot_hist(gastos)
