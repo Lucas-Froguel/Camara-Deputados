@@ -58,7 +58,7 @@ A classe melhor desenvolvida até agora é a `Deputados`, que tem as informaçõ
 
  Usando a mesma classe, podemos ver a função `informacoes`. Digamos que sabemos que o deputado Vitor Hugo é o de código 179587, então poderíamos fazer:
  ```
-  informacoes('179587')
+  dep.informacoes('179587')
  ```
  >O deputado sob a id 179587 é VITOR HUGO DE ARAUJO ALMEIDA e faz parte do partido PSL.
  >
